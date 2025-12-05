@@ -1,9 +1,15 @@
+import Popülerürünler from "@/components/ui/common/Popülerürünler";
 import ProductCard from "@/components/ui/common/ProductCard";
 import ProductList from "@/components/ui/common/ProductList";
 import { CarouselPlugin } from "@/components/ui/common/Slider";
 function Home() {
   return <>
   <CarouselPlugin />
+  <h2>Popüler Ürünler</h2>
+      <Popülerürünler />
+     
+     
+     
      {/* Kadın Banner */}
       <div className="max-w-7xl mx-auto mt-30">
         <img
