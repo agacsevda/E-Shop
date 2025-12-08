@@ -16,8 +16,8 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 m-10">
-    <div className="relative w-[250px] h-[350px] bg-amber-500 p-2">
+    <div className="max-w-7xl mx-auto items-center justify-between py-4 px-4 m-10">
+    <div className="relative w-[250px] h-[350px] bg-[#F8F8F8] p-2">
 
       {/* ❤️ Beğen Butonu */}
       <button className="absolute top-3 right-3 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition">
@@ -59,8 +59,13 @@ export default function ProductCard({ product }: ProductCardProps) {
         <h3 className="font-bold">{product.name}</h3>
         <p className="text-gray-500 text-sm">{product.model}</p>
         <p className="font-semibold mt-1">{product.price} TL</p>
+        <button className="w-full mt-3 bg-[#FF6605] text-white py-2 rounded-md hover:bg-gray-800 transition">
+        Sepete Ekle
+      </button>
       </div>
     </div>
+     
     </div>
+    
   );
 }

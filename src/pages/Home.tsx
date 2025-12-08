@@ -1,16 +1,14 @@
 import Popülerürünler from "@/components/ui/common/Popülerürünler";
-import ProductCard from "@/components/ui/common/ProductCard";
 import ProductList from "@/components/ui/common/ProductList";
 import { CarouselPlugin } from "@/components/ui/common/Slider";
 function Home() {
-  return <>
-  <CarouselPlugin />
-  <h2>Popüler Ürünler</h2>
+  return (
+    <>
+      <CarouselPlugin />
+      <h2></h2>
       <Popülerürünler />
-     
-     
-     
-     {/* Kadın Banner */}
+
+      {/* Kadın Banner */}
       <div className="max-w-7xl mx-auto mt-30">
         <img
           src="/src/assets/images/Kadinsaatleri.png"
@@ -18,21 +16,39 @@ function Home() {
           className="w-full h-auto object-cover"
         />
       </div>
-      
-       <div className="mt-4">
+
+      <div className="mt-4">
         <ProductList category="kadin" />
       </div>
 
-      <h2>ERKEK</h2>
+      <div className="max-w-7xl mx-auto mt-30">
+        <img
+          src="/src/assets/images/erkeksaatleri.png"
+          alt="kadin"
+          className="w-full h-auto object-cover"
+        />
+      </div>
       <ProductList category="erkek" />
 
-      <h2>ÇOCUK</h2>
+      <div className="max-w-7xl mx-auto mt-30">
+        <img
+          src="/src/assets/images/cocuksaatleri.png"
+          alt="kadin"
+          className="w-full h-auto object-cover"
+        />
+      </div>
       <ProductList category="cocuk" />
 
-      <h2>GİYİLEBİLİR TEKNOLOJİ</h2>
+      <div className="max-w-7xl mx-auto mt-30">
+        <img
+          src="/src/assets/images/giyilebilirteknoloji.png"
+          alt="kadin"
+          className="w-full h-auto object-cover"
+        />
+      </div>
       <ProductList category="giyilebilir-teknoloji" />
     </>
-
+  );
 }
 
 export default Home;

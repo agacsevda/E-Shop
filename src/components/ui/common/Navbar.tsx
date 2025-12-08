@@ -16,9 +16,10 @@ import {
 } from "@/components/ui/menubar";
 function Navbar() {
   return (
-    <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4">
+    <div className="w-full bg-[#F8F8F8] mb-6 mt-6">
+    <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-4 ">
       <Menubar
-        className="w-[1215px] h-[100px] d-flex justify-content-center  align-items-lg-center gap-50 px-4
+        className="w-full h-[50px] d-flex justify-content-center  align-items-lg-center gap-50 px-4 bg-[#F8F8F8]
          "
       >
         <MenubarMenu>
@@ -133,6 +134,7 @@ function Navbar() {
         </MenubarMenu>
       </Menubar>
        
+    </div>
     </div>
   );
 }
