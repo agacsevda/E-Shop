@@ -1,11 +1,12 @@
 import products from "@/Data/products.json";
 import ProductCard from "../common/ProductCard";
 interface ProductType {
-  id: number;
+ id: number;
   name: string;
   model: string;
   price: number;
-  image: string;
+  image?: string;      // artık zorunlu değil
+  images?: string[];   // bazı ürünlerde var
   category: string;
 }
 
@@ -20,17 +21,14 @@ export default function PopularProducts() {
 
   return (
     <>
-  
-    <div className="max-w-7xl mx-26 items-center mt-20">
-    <h2 className="pr-50 mt-30 mb-5 fs-28 fw-bold text-amber-600">POPÜLER ÜRÜNLER</h2>
-
-      <div className=" grid grid-cols-2 md:grid-cols-4 gap-21">
-          
-        {populerUrunler.map((urun: ProductType) => (
-          <ProductCard key={urun.id} product={urun} />
-        ))}
+      <div className="max-w-7xl mx-26 items-center mt-20">
+        <h2 className="pr-50 mt-30 mb-5 fs-28 fw-bold">POPÜLER ÜRÜNLER</h2>
+        <div className=" grid grid-cols-2 md:grid-cols-4 gap-21">
+          {populerUrunler.map((urun: ProductType) => (
+            <ProductCard key={urun.id} product={urun} />
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 }

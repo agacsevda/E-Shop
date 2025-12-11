@@ -1,12 +1,13 @@
 import React from "react";
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ProductType {
   id: number;
   name: string;
   model: string;
   price: number;
-  image: string;
+  images: string[];
   category: string;
 }
 
@@ -23,6 +24,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <button className="absolute top-3 right-3 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition">
         <Heart size={20} className="text-red-500" />
       </button>
+       <Link to={`/product/${product.id}`}>
 
       {/* Card Shape + Resim */}
       <svg
@@ -40,7 +42,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             height="1"
           >
             <image
-              href={product.image}  // ← JSON’dan gelen resim burada
+               href={product.images[0]}  // ← JSON’dan gelen resim burada
               width="235"
               height="330"
               preserveAspectRatio="xMidYMid slice"
@@ -53,6 +55,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           fill={`url(#image-${product.id})`} // ← benzersiz pattern
         />
       </svg>
+      </Link>
 
       {/* Ürün Bilgileri */}
       <div className="text-center mt-3 ">
