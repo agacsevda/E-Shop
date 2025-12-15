@@ -2,6 +2,7 @@ import { createBrowserRouter, type RouteObject } from "react-router-dom";//sayfa
 import Root from "./Root";
 import Home from "./pages/Home";
 import ProductDetail from "./components/ui/common/ProductDetail";
+import Sepetim from "./components/ui/common/Sepetim";
 
 const routes: RouteObject[] = [
   {
@@ -14,6 +15,10 @@ const routes: RouteObject[] = [
     {
   path: "/product/:id",
   element: <ProductDetail />,
+},
+{
+  path:"/sepetim",
+  element:<Sepetim/>,
 }
 
   ],
