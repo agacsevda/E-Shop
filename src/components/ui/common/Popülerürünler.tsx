@@ -23,11 +23,15 @@ export default function PopularProducts() {
     <>
       <div className="max-w-7xl mx-26 items-center mt-20">
         <h2 className="pr-50 mt-30 mb-5 fs-28 fw-bold">POPÜLER ÜRÜNLER</h2>
-        <div className=" grid grid-cols-2 md:grid-cols-4 gap-21">
-          {populerUrunler.map((urun: ProductType) => (
-            <ProductCard key={urun.id} product={urun}/>
-          ))}
-        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-21">
+  {populerUrunler.map((urun) => (
+    <ProductCard 
+      key={urun.id} 
+      // urun nesnesini 'any' olarak geçerek iki tip arasındaki kavgayı bitiriyoruz
+      product={urun as any}
+    />
+  ))}
+</div>
       </div>
     </>
   );
