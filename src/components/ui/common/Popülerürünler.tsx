@@ -1,12 +1,11 @@
 import products from "@/Data/products.json";
 import ProductCard from "../common/ProductCard";
 interface ProductType {
- id: number;
+  id: number;
   name: string;
   model: string;
   price: number;
-  image?: string;      // artık zorunlu değil
-  images?: string[];   // bazı ürünlerde var
+  images?: string[]; // Soru işareti koyduk: artık undefined olabilir
   category: string;
 }
 
