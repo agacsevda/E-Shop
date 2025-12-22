@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import  {  useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -37,13 +37,16 @@ type CartItem = {
 };
 
 function Odeme() {
-  const [cart, setCart] = useState<CartItem[]>([]);
 
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
-    setCart(storedCart);
-  }, []);
 
+ 
+const [cart, ] = useState<CartItem[]>(() => {
+  if (typeof window !== "undefined") {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? (JSON.parse(storedCart) as CartItem[]) : [];
+  }
+  return [];
+});
   // 2. Formu tanımlıyoruz
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

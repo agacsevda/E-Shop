@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import products from "@/Data/products.json";
@@ -17,10 +17,19 @@ import {
 import { Ruler } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+interface ProductType {
+  id: number;
+  name: string;
+  price: number;
+  images: string[];
+  model?: string;
+  quantity?: number; // Sepet işlemleri için isteğe bağlı adet alanı
+}
+
 // =================================================================
 // 1. STAR RATING BİLEŞENİ (DÜZELTİLDİ VE ProductDetail DIŞINA TAŞINDI)
 // Bu bileşen, birden fazla yerde kullanıldığı için ProductDetail dışında olmalıdır.
-const StarRating = ({ rating, size = "w-5 h-5" }) => {
+const StarRating = ({ rating, size = "w-5 h-5" }:{ rating: number; size?: string }) => {
   const totalStars = 5;
   const stars = [];
 
@@ -52,7 +61,7 @@ function ProductDetail() {
   const navigate = useNavigate();
 
   const product = products.find((item) => item.id === Number(id));
-  const [quantity, setQuantity] = useState(1);
+  const [quantity] = useState(1);
   const [activeTab, setActiveTab] = useState<"info" | "shipping" | "return">(
     "info"
   );
@@ -166,7 +175,7 @@ function ProductDetail() {
               ].map((tab) => (
                 <button
                   key={tab.key}
-                  onClick={() => setActiveTab(tab.key as any)}
+                  onClick={() => setActiveTab(tab.key as "info" | "shipping" | "return")}
                   className={`pb-2 text-sm font-medium border-b-2 ${
                     activeTab === tab.key
                       ? "border-orange-500 text-orange-600"
@@ -338,7 +347,7 @@ function ProductDetail() {
                   const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
                   const existingProduct = cart.find(
-                    (item: any) => item.id === product.id
+                    (item:ProductType) => item.id === product.id
                   );
 
                   if (existingProduct) {

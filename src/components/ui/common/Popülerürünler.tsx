@@ -7,6 +7,7 @@ interface ProductType {
   price: number;
   images?: string[]; // Soru işareti koyduk: artık undefined olabilir
   category: string;
+  
 }
 
 export default function PopularProducts() {
@@ -24,7 +25,7 @@ export default function PopularProducts() {
         <h2 className="pr-50 mt-30 mb-5 fs-28 fw-bold">POPÜLER ÜRÜNLER</h2>
         <div className=" grid grid-cols-2 md:grid-cols-4 gap-21">
           {populerUrunler.map((urun: ProductType) => (
-            <ProductCard key={urun.id} product={urun} />
+            <ProductCard key={urun.id} product={urun}/>
           ))}
         </div>
       </div>

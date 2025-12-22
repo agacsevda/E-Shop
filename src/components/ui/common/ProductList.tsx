@@ -1,4 +1,4 @@
-import React from 'react'
+
 import products from '../../../Data/products.json'
 import ProductCard from './ProductCard'
 interface producttype{
@@ -6,7 +6,7 @@ interface producttype{
     name: string;
     model: string;
     price: number;
-    image: string;
+   images: string[];
     category: string;
 }
 interface ProductListProps {
