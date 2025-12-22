@@ -5,9 +5,9 @@
     "model": "GUGW0861L2",
     "price": 1500,
     "images": [
-      "images/images/Subtract.png",
-      "images/images/kadin1alt1.png",
-      "images/images/kadin1alt2.png"
+      "/public/public/images/images/kadin1alt1.png",
+      "/public/images/images/kadin1alt1.png",
+      "/public/images/images/kadin1alt2.png"
     ],
     "category": "kadin"
   },
@@ -16,9 +16,9 @@
     "name": "Fosill Kadın Kol Saati",
     "model": "GUGW0861L3",
     "price": 1600,
-    "images": ["images/images/kadinsaat1.png",  
-      "images/images/kadin1alt1.png",
-      "images/images/kadin1alt2.png"
+    "images": ["/public/images/images/kadinsaat1.png",  
+      "/public/images/images/kadin1alt1.png",
+      "/public/images/images/kadin1alt2.png"
   ],
     "category": "kadin"
   },
@@ -27,7 +27,7 @@
     "name": "Fosill Kadın Kol Saati",
     "model": "GUGW0861L4",
     "price": 1750,
-    "images": ["images/images/kadinsaat2.png",
+    "images": ["/public/public/images/images/kadinsaat2.png",
      "images/images/kadin1alt1.png",
       "images/images/kadin1alt2.png"
   ],
