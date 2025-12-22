@@ -53,9 +53,9 @@ function ProductDetail() {
 
   const product = products.find((item) => item.id === Number(id));
   const [quantity, setQuantity] = useState(1);
-  const [activeTab, setActiveTab] = useState<
-    "info" | "shipping" | "return"
-  >("info");
+  const [activeTab, setActiveTab] = useState<"info" | "shipping" | "return">(
+    "info"
+  );
 
   if (!product) return <div>Ürün bulunamadı</div>;
   // Yorum Verisi
@@ -74,9 +74,6 @@ function ProductDetail() {
     },
     // ... daha fazla yorum eklenebilir
   ];
-
-
- 
 
   if (!product) return <div>Ürün bulunamadı</div>;
   return (
@@ -336,33 +333,33 @@ function ProductDetail() {
                 </span>
                 <button> + </button>
               </div>
-<button
-  onClick={() => {
-    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+              <button
+                onClick={() => {
+                  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-    const existingProduct = cart.find(
-      (item: any) => item.id === product.id
-    );
+                  const existingProduct = cart.find(
+                    (item: any) => item.id === product.id
+                  );
 
-    if (existingProduct) {
-      existingProduct.quantity += quantity;
-    } else {
-      cart.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.images[0], // ✅ ürünün kendi resmi
-        quantity: quantity,
-      });
-    }
+                  if (existingProduct) {
+                    existingProduct.quantity += quantity;
+                  } else {
+                    cart.push({
+                      id: product.id,
+                      name: product.name,
+                      price: product.price,
+                      image: product.images[0], // ✅ ürünün kendi resmi
+                      quantity: quantity,
+                    });
+                  }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    navigate("/sepetim");
-  }}
-  className="bg-orange-500 hover:bg-orange-600 text-white px-24 py-4 rounded-lg text-lg font-semibold"
->
-  Sepete Ekle
-</button>
+                  localStorage.setItem("cart", JSON.stringify(cart));
+                  navigate("/sepetim");
+                }}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-24 py-4 rounded-lg text-lg font-semibold"
+              >
+                Sepete Ekle
+              </button>
             </div>
           </div>
         </div>

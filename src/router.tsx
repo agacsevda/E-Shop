@@ -3,6 +3,8 @@ import Root from "./Root";
 import Home from "./pages/Home";
 import ProductDetail from "./components/ui/common/ProductDetail";
 import Sepetim from "./components/ui/common/Sepetim";
+import Odeme from "./components/ui/common/Odeme";
+
 
 const routes: RouteObject[] = [
   {
@@ -19,7 +21,12 @@ const routes: RouteObject[] = [
 {
   path:"/sepetim",
   element:<Sepetim/>,
+},
+{
+  path:"/odeme",
+  element:<Odeme/>,
 }
+
 
   ],
   },

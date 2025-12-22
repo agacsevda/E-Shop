@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import PopularProducts from "./Popülerürünler";
+import { useNavigate } from "react-router-dom";
 
 type CartItem = {
   id: number;
@@ -22,9 +24,26 @@ function Sepetim() {
     (total, item) => total + item.price * item.quantity,
     0
   );
+  const updateQuantity = (id: number, type: "increase" | "decrease") => {
+    const updatedCart = cart.map((item) => {
+      if (item.id === id) {
+        if (type === "increase") {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        if (type === "decrease" && item.quantity > 1) {
+          return { ...item, quantity: item.quantity - 1 };
+        }
+      }
+      return item;
+    });
+
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
   const kargo = cart.length > 0 ? 50 : 0;
   const genelToplam = araToplam + kargo;
+  const navigate = useNavigate();
 
   return (
     <div className="max-w-7xl mx-auto py-10">
@@ -47,20 +66,29 @@ function Sepetim() {
                     alt={item.name}
                     className="w-20 h-20 rounded-lg object-cover"
                   />
-
-                  <div>
-                    <h3 className="font-semibold">{item.name}</h3>
-                    <p className="mt-1 font-medium">
-                      {item.price} TL
-                    </p>
-                  </div>
+                  <h3 className="font-semibold">{item.name}</h3>
                 </div>
 
                 {/* Adet */}
                 <div className="flex items-center gap-2">
-                  <span className="font-semibold">
-                    Adet: {item.quantity}
-                  </span>
+                  <button
+                    onClick={() => updateQuantity(item.id, "decrease")}
+                    className="w-8 h-8 border rounded"
+                  >
+                    -
+                  </button>
+
+                  <span className="font-semibold">{item.quantity}</span>
+
+                  <button
+                    onClick={() => updateQuantity(item.id, "increase")}
+                    className="w-8 h-8 border rounded"
+                  >
+                    +
+                  </button>
+                </div>
+                <div>
+                  <p className="mt-1 font-medium">{item.price} TL</p>
                 </div>
               </div>
             ))}
@@ -89,12 +117,16 @@ function Sepetim() {
               </div>
             </div>
 
-            <button className="w-full mt-6 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold">
+            <button
+              onClick={() => navigate("/odeme")}
+              className="w-full mt-6 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold"
+            >
               Devam Et
             </button>
           </div>
         </div>
       )}
+      <PopularProducts />
     </div>
   );
 }
