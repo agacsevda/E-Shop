@@ -8,7 +8,7 @@ function Footer() {
           {/* Sol */}
           <div>
             <img
-              src="/src/assets/images/logo.png"
+              src="/images/logo.png"
               alt="logo"
               className="w-[100px] h-[50px]"
             />
@@ -17,7 +17,7 @@ function Footer() {
               Modern ve kullanıcı dostu alışveriş deneyimi.
             </p>
             <img
-              src="/src/assets/images/sosyalmedya.png"
+              src="/images/sosyalmedya.png"
               alt="logo"
               className="w-[200px] h-[80px] mt-6"
             />
@@ -85,7 +85,7 @@ function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-black mb-3"></h3>
                <img
-              src="/src/assets/images/mobilindirme.png"
+              src="/images/mobilindirme.png"
               alt="logo"
               className="w-[100px] h-[100px] mt-6"
             />

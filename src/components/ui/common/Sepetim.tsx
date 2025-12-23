@@ -1,49 +1,65 @@
-import  { useEffect, useState } from "react";
-import PopularProducts from "./Popülerürünler";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PopularProducts from "./Popülerürünler";
 
 type CartItem = {
   id: number;
   name: string;
   price: number;
-  image: string;
+  images: string[];
   quantity: number;
 };
 
 function Sepetim() {
-  const [cart, setCart] = useState<CartItem[]>([]);
+ 
+  const navigate = useNavigate();
 
-  // 🔹 Sayfa açılır açılmaz localStorage'tan sepeti oku
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
-    setCart(storedCart);
-  }, []);
+  // 🔹 İlk açılışta localStorage'tan oku
+const [cart, setCart] = useState<CartItem[]>(() => {
+  return JSON.parse(localStorage.getItem("cart") || "[]");
+});
+  // 🔹 Adet artır / azalt
+  const updateQuantity = (id: number, type: "increase" | "decrease") => {
+    let updatedCart: CartItem[];
 
-  // 🔹 Hesaplamalar
+    if (type === "increase") {
+      updatedCart = cart.map((item) =>
+        item.id === id
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    } else {
+      updatedCart = cart
+        .map((item) =>
+          item.id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0); // 0 olunca sil
+    }
+
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
+  // 🔹 Ürünü tamamen sil
+  const removeItem = (id: number) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
+  // 🔹 Fiyat hesaplamaları
   const araToplam = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
-  const updateQuantity = (id: number, type: "increase" | "decrease") => {
-    const updatedCart = cart.map((item) => {
-      if (item.id === id) {
-        if (type === "increase") {
-          return { ...item, quantity: item.quantity + 1 };
-        }
-        if (type === "decrease" && item.quantity > 1) {
-          return { ...item, quantity: item.quantity - 1 };
-        }
-      }
-      return item;
-    });
-
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
 
   const kargo = cart.length > 0 ? 50 : 0;
   const genelToplam = araToplam + kargo;
-  const navigate = useNavigate();
 
   return (
     <div className="max-w-7xl mx-auto py-10">
@@ -53,7 +69,7 @@ function Sepetim() {
         <p>Sepetiniz boş</p>
       ) : (
         <div className="grid grid-cols-3 gap-10">
-          {/* SOL – ÜRÜN LİSTESİ */}
+          {/* SOL – ÜRÜNLER */}
           <div className="col-span-2 space-y-6">
             {cart.map((item) => (
               <div
@@ -62,7 +78,9 @@ function Sepetim() {
               >
                 <div className="flex items-center gap-5">
                   <img
-                    src={item.image}
+                    src={
+                      item.images?.[0] || "/images/placeholder.png"
+                    }
                     alt={item.name}
                     className="w-20 h-20 rounded-lg object-cover"
                   />
@@ -72,31 +90,48 @@ function Sepetim() {
                 {/* Adet */}
                 <div className="flex items-center gap-2">
                   <button
-                    onClick={() => updateQuantity(item.id, "decrease")}
+                    onClick={() =>
+                      updateQuantity(item.id, "decrease")
+                    }
                     className="w-8 h-8 border rounded"
                   >
                     -
                   </button>
 
-                  <span className="font-semibold">{item.quantity}</span>
+                  <span className="font-semibold">
+                    {item.quantity}
+                  </span>
 
                   <button
-                    onClick={() => updateQuantity(item.id, "increase")}
+                    onClick={() =>
+                      updateQuantity(item.id, "increase")
+                    }
                     className="w-8 h-8 border rounded"
                   >
                     +
                   </button>
                 </div>
-                <div>
-                  <p className="mt-1 font-medium">{item.price} TL</p>
+
+                {/* Fiyat + Sil */}
+                <div className="text-right">
+                  <p className="font-medium">
+                    {item.price * item.quantity} TL
+                  </p>
+                  <button
+                    onClick={() => removeItem(item.id)}
+                     className="bg-orange-500 hover:bg-orange-600 text-white text-[10px] px-2 py-1 rounded">
+                    Sil
+                  </button>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* SAĞ – SİPARİŞ ÖZETİ */}
+          {/* SAĞ – ÖZET */}
           <div className="bg-white p-6 rounded-xl shadow-md h-fit">
-            <h2 className="text-lg font-semibold mb-4">Sipariş Özeti</h2>
+            <h2 className="text-lg font-semibold mb-4">
+              Sipariş Özeti
+            </h2>
 
             <div className="space-y-3 text-sm">
               <div className="flex justify-between">
@@ -126,6 +161,7 @@ function Sepetim() {
           </div>
         </div>
       )}
+
       <PopularProducts />
     </div>
   );

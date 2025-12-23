@@ -1,6 +1,8 @@
-import Slader1 from "@/assets/images/Slader1.png"
-import Slader2 from "@/assets/images/Slader2.png"
-import Slader3 from "@/assets/images/Slader3.png"
+const images = [
+  "/images/Slader1.png",
+  "/images/Slader2.png",
+  "/images/Slader3.png"
+]
 
 
 import * as React from "react"
@@ -15,7 +17,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-const images = [Slader1, Slader2, Slader3]
+
 export function CarouselPlugin() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })

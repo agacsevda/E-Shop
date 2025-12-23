@@ -4,14 +4,15 @@ import { CarouselPlugin } from "@/components/ui/common/Slider";
 function Home() {
   return (
     <>
+    <div id="home"></div>
       <CarouselPlugin />
       <h2></h2>
       <Popülerürünler />
 
       {/* Kadın Banner */}
-      <div className="max-w-7xl mx-auto mt-30">
+      <div id="kadin"className="max-w-7xl mx-auto mt-30">
         <img
-          src="/src/assets/images/Kadinsaatleri.png"
+          src="/images/Kadinsaatleri.png"
           alt="kadin"
           className="w-full h-auto object-cover"
         />
@@ -21,27 +22,27 @@ function Home() {
         <ProductList category="kadin" />
       </div>
 
-      <div className="max-w-7xl mx-auto mt-30">
+      <div id="erkek" className="max-w-7xl mx-auto mt-30">
         <img
-          src="/src/assets/images/erkeksaatleri.png"
+          src="/images/erkeksaatleri.png"
           alt="kadin"
           className="w-full h-auto object-cover"
         />
       </div>
       <ProductList category="erkek" />
 
-      <div className="max-w-7xl mx-auto mt-30">
+      <div id="cocuk" className="max-w-7xl mx-auto mt-30">
         <img
-          src="/src/assets/images/cocuksaatleri.png"
+          src="/images/cocuksaatleri.png"
           alt="kadin"
           className="w-full h-auto object-cover"
         />
       </div>
       <ProductList category="cocuk" />
 
-      <div className="max-w-7xl mx-auto mt-30">
+      <div id="giyilebilirteknoloji" className="max-w-7xl mx-auto mt-30">
         <img
-          src="/src/assets/images/giyilebilirteknoloji.png"
+          src="/images/giyilebilirteknoloji.png"
           alt="kadin"
           className="w-full h-auto object-cover"
         />

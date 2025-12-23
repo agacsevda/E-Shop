@@ -4,21 +4,24 @@ import Navbar from "./components/ui/common/Navbar";
 import Footer from "./components/ui/common/Footer";
 
 function Root() {
- 
-  // location objesi otomatik olarak 'Location' tipinde gelir
   const location = useLocation();
 
-  // Dizideki yollardan herhangi biriyle eşleşirse true döner
- const isCheckoutPage = location.pathname === "/odeme";
+  // Eğer yol "/odeme" ise true döner
+  const isCheckoutPage = location.pathname === "/odeme";
+
   return (
     <>
-   { isCheckoutPage && <Header />}
+      {/* 1. Header: Her sayfada olduğu için koşulsuz ekledik */}
+      <Header />
+
+      {/* 2. Navbar: Sadece ödeme sayfası DEĞİLSE görünür */}
       {!isCheckoutPage && <Navbar />}
       
       <main>
         <Outlet />
       </main>
 
+      {/* 3. Footer: Sadece ödeme sayfası DEĞİLSE görünür */}
       {!isCheckoutPage && <Footer />}
     </>
   );

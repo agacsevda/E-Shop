@@ -344,10 +344,10 @@ function ProductDetail() {
               </div>
               <button
                 onClick={() => {
-                  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-                  const existingProduct = cart.find(
-                    (item:ProductType) => item.id === product.id
+  const existingProduct = cart.find(
+    (item: ProductType) => item.id === product.id
                   );
 
                   if (existingProduct) {
@@ -357,7 +357,7 @@ function ProductDetail() {
                       id: product.id,
                       name: product.name,
                       price: product.price,
-                      image: product.images[0], // ✅ ürünün kendi resmi
+                      images: product.images, // ✅ ürün görsellerini dizi olarak sakla
                       quantity: quantity,
                     });
                   }

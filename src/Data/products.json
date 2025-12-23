@@ -5,9 +5,9 @@
     "model": "GUGW0861L2",
     "price": 1500,
     "images": [
-      "/public/public/images/images/kadin1alt1.png",
-      "/public/images/images/kadin1alt1.png",
-      "/public/images/images/kadin1alt2.png"
+      "/images/Subtract.png",
+      "/images/kadin1alt1.png",
+      "/images/kadin1alt2.png"
     ],
     "category": "kadin"
   },
@@ -16,10 +16,11 @@
     "name": "Fosill Kadın Kol Saati",
     "model": "GUGW0861L3",
     "price": 1600,
-    "images": ["/public/images/images/kadinsaat1.png",  
-      "/public/images/images/kadin1alt1.png",
-      "/public/images/images/kadin1alt2.png"
-  ],
+    "images": [
+      "/images/kadinsaat1.png",
+      "/images/kadin1alt1.png",
+      "/images/kadin1alt2.png"
+    ],
     "category": "kadin"
   },
   {
@@ -27,10 +28,11 @@
     "name": "Fosill Kadın Kol Saati",
     "model": "GUGW0861L4",
     "price": 1750,
-    "images": ["/public/public/images/images/kadinsaat2.png",
-     "images/images/kadin1alt1.png",
-      "images/images/kadin1alt2.png"
-  ],
+    "images": [
+      "/images/kadinsaat2.png",
+      "/images/kadin1alt1.png",
+      "/images/kadin1alt2.png"
+    ],
     "category": "kadin"
   },
   {
@@ -38,23 +40,23 @@
     "name": "Fosill Kadın Kol Saati",
     "model": "GUGW0861L5",
     "price": 1900,
-    "images": ["images/images/kadinsaat3.png",
-     "images/images/kadin1alt1.png",
-      "images/images/kadin1alt2.png"
-  ],
+    "images": [
+      "/images/kadinsaat3.png",
+      "/images/kadin1alt1.png",
+      "/images/kadin1alt2.png"
+    ],
     "category": "kadin"
   },
-
   {
     "id": 5,
     "name": "Fosill Erkek Kol Saati",
     "model": "GUGW0861M1",
     "price": 3000,
     "images": [
-      "images/images/erkeksaat1.png",
-      "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
+      "/images/erkeksaat1.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
     ],
     "category": "erkek"
   },
@@ -63,11 +65,12 @@
     "name": "Fosill Erkek Kol Saati",
     "model": "GUGW0861M2",
     "price": 3200,
-    "images": ["images/images/erkeksaat2.png",
-    "images/imageserkekalt1.png",
-      "images/imageserkekalt2.png",
-      "images/imageserkekalt3.png"
-  ],
+    "images": [
+      "/images/erkeksaat2.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "erkek"
   },
   {
@@ -75,11 +78,12 @@
     "name": "Fosill Erkek Kol Saati",
     "model": "GUGW0861M3",
     "price": 3500,
-    "images": ["images/images/erkeksaat3.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/erkeksaat3.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "erkek"
   },
   {
@@ -87,11 +91,12 @@
     "name": "Fosill Erkek Kol Saati",
     "model": "GUGW0861M4",
     "price": 3700,
-    "images": ["images/images/erkeksaat4.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/erkeksaat4.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "erkek"
   },
   {
@@ -99,24 +104,25 @@
     "name": "Fosill Çocuk Kol Saati",
     "model": "GUGW0861C1",
     "price": 1200,
-    "images": ["images/images/cocuksaat1.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/cocuksaat1.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "cocuk"
   },
-
   {
     "id": 10,
     "name": "Fosill Çocuk Kol Saati",
     "model": "GUGW0861C2",
     "price": 1300,
     "images": [
-      "images/images/cocuksaat2.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"],
+      "/images/cocuksaat2.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "cocuk"
   },
   {
@@ -124,11 +130,12 @@
     "name": "Fosill Çocuk Kol Saati",
     "model": "GUGW0861C3",
     "price": 1400,
-    "images": ["images/images/cocuksaat3.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/cocuksaat3.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "cocuk"
   },
   {
@@ -136,24 +143,25 @@
     "name": "Fosill Çocuk Kol Saati",
     "model": "GUGW0861C4",
     "price": 1500,
-    "images": ["images/images/cocuksaat4.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/cocuksaat4.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "cocuk"
   },
-
   {
     "id": 13,
     "name": "Akıllı Saat",
     "model": "SMART01",
     "price": 2000,
-    "images": ["images/images/giyilebilirteknoloji1.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/giyilebilirteknoloji1.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "giyilebilir-teknoloji"
   },
   {
@@ -161,11 +169,12 @@
     "name": "Kulaklık",
     "model": "SMART02",
     "price": 2500,
-    "images": ["images/images/giyilebilirteknoloji2.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/giyilebilirteknoloji2.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "giyilebilir-teknoloji"
   },
   {
@@ -173,11 +182,12 @@
     "name": "Akıllı Saat",
     "model": "SMART03",
     "price": 2700,
-    "images": ["images/images/giyilebilirteknoloji3.png",
-    "images/imageserkekalt1.png",
-      "images/imageserkekalt2.png",
-      "images/imageserkekalt3.png"
-  ],
+    "images": [
+      "/images/giyilebilirteknoloji3.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "giyilebilir-teknoloji"
   },
   {
@@ -185,11 +195,12 @@
     "name": "Akıllı Saat",
     "model": "SMART04",
     "price": 2900,
-    "images": ["images/images/giyilebilirteknoloji4.png",
-    "images/images/erkekalt1.png",
-      "images/images/erkekalt2.png",
-      "images/images/erkekalt3.png"
-  ],
+    "images": [
+      "/images/giyilebilirteknoloji4.png",
+      "/images/erkekalt1.png",
+      "/images/erkekalt2.png",
+      "/images/erkekalt3.png"
+    ],
     "category": "giyilebilir-teknoloji"
   }
 ]
